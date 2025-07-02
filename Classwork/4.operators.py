@@ -13,7 +13,7 @@ a=20
 b=10
 print(a+b) #30 addition
 print(a-b) #10 subtraction
-print(a*b) #200 multi[lication
+print(a*b) #200 multiplication
 print(a/b) #2.0 division
 print(a//b) #2 floor division
 print(a%b) #0 modulus
@@ -46,12 +46,19 @@ a=b
 print("Assign(=):",a) 
 a+=b
 print("Add & Assign(+=):",a)
+a+=b
 print("Subtract & Assign(-=):",a) 
+a-=b
 print("Multiply & Assign(*=):",a)
+a*=b
 print("Divide & Assign(/=):",a) 
+a/=b
 print("Floor divide & Assign(//=):",a) 
+a//=b
 print("Modulus & Assign(%=):",a) 
+a%=b
 print("EXponentiate & Assign(**=):",a)
+a**=b
 
 #4.Logical Operators
 a=10
@@ -62,6 +69,30 @@ print(a>5 and b<30) #true (both conditions are true)
 print(a>15 or b<30) #True (atleast one condition is true)
 #NOT gate
 print(not(a>5)) #false (reverse the true condition)
+
+#5.Memership operators
+names={"praveen","vasu","reo"}
+#In operator
+print ("praveen" in names) #true value exists in sequence
+#Not in operator
+print("ravi" not in names) #true value not exists in sequence
+print("ravi" in names) #false not mentioned in names
+
+#6.Identity operators
+a=[1,2,3]
+b=a
+c=[1,2,3]
+#Is operator
+print(a is b) #true both refer to same object
+print(a is c) #false different objects with same content
+#Is not operator
+print(a is not c) #true
+print(b is not c) #true
+print(b is c) #false
+
+#7.Bitwise operators(with Binary Representation)
+
+
 
 
 
