@@ -92,6 +92,29 @@ print(b is c) #false
 
 #7.Bitwise operators(with Binary Representation)
 
+#Logic Gates Truth Table (for bits 0 and 1)
+
+#(A) (B) (A AND B) (A OR B) (A XOR B) (NOT A)
+
+#0    0      0         0        0        1
+
+#0    1      0         1        1        1
+
+#1    0      0         1        1        0
+
+#1    1      1         1        0        0
+
+x = 5 # Binary: 0101
+y = 3 # Binary: 0011
+print(x & y) # Output: 1 (Binary: 0001 → AND operation)
+print(x | y) # Output: 7 (Binary: 0111 → OR operation)
+print(x ^ y) # Output: 6 (Binary: 0110 → XOR operation)
+print(~x) # Output: -6 (Binary: Inverts bits of 5)
+print(x << 1) # Output: 10 (Binary: 1010 → Shifts left by 1)
+print(x >> 1) # Output: 2 (Binary: 0010 → Shifts right by 1)
+
+
+
 
 
 
