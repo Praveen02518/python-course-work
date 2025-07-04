@@ -78,3 +78,59 @@ print("hello".index("e")) # 1
 print("hello".rindex("l")) # 3
 #count(sub) Counts how many times sub appears. 
 print("banana".count("a")) # 3
+
+#4.String Testing Methods (BOOLean Results)
+#startswith(sub) Checks if the string starts with sub.
+print("python".startswith("py")) # True
+#endswith(sub) Checks if the string ends with sub.
+print("python".endswith("on")) #true
+#isalpha() Returns True if alpha characters are alphabets.
+print("Hello".isalpha()) # True
+#isalnum() Returns True if all characters are alphanumeric.
+print("abc123".isalnum()) #True
+#islower() Returns True if all characters are lowercase.
+print("hello".islower()) # True
+#isupper() Returns True if all characters are uppercase.
+print("HELLO".isupper()) # True
+#isspace() Returns True if all characters are whitespace.
+print(" ".isspace()) # True
+#istitle() Returns True if the string is in the title case.
+print("Hello World".istitle()) #True
+#isidentifier() Checks if the string is a valid Python identifier.
+print("variable1".isidentifier()) # True
+
+#5.Replace & Modify methods
+#replace(old,new) Replaces occurrences of old with new.
+print("apple".replace("p", "b")) #"abble"
+#translate(table) Replaces characters using a translation table.
+print("abc".translate(str.maketrans("a", "x"))) # "xbc"
+#maketrans() Creates a translation table for translate().
+print("python".maketrans("aon","%#5")) # {97: 37, 111: 35, 110:53}
+
+#6.Splitting & Joining Methods
+#split(sep)
+print("a,b,c".split(",")) # ['a', 'b','c']
+#rsplit(sep) Splits from the right side.
+print("a,b,c".rsplit(",", 1)) # ['a,b','c']
+#splitlines() Splits at line breaks (\n).
+print("Hello\nWorld".splitlines()) #['Hello', 'World']
+#join(iterable) Joins elements with a separator.
+print(" ".join(["Hello", "World"])) #"Hello World"
+#partition(sep) Splits into a 3-part tuple at first sep.
+print("apple-pie".partition("-")) #('apple', '-', 'pie')
+#rpartition(sep) Splits into a 3-part tuple at last sep.
+print("apple-pie".rpartition("-")) #('apple', '-', 'pie')
+
+#7.Whitespace & Trimming Methods
+#strip(chars) Removes leading and trailing characters (default: spaces).
+print(" hello ".strip()) #"hello"
+#lstrip(chars) Removes leading characters. 
+print("---hello".lstrip("-")) #"hello"
+#rstrip(chars) Removes trailing characters. 
+print("hello---".rstrip("-")) # "hello"
+
+#8.Encoding & Decoding Methods
+#encode(encoding) Converts the string to bytes.
+print("hello".encode("utf-8")) #b'hello'
+#decode(encoding) Converts bytes back to string.
+print(b'hello'.decode("utf-8")) #"hello"
