@@ -55,3 +55,47 @@ print(5 not in my_tuple) # Output: True
 my_tuple = (1, 2, 3)
 a, b, c = my_tuple
 print(a, b, c) # Output: 1 2 3
+
+#4.Tuple Methods
+#count(x) Counts the number of occurrences of x in the tuple
+
+print((1, 2, 2, 3).count(2)) #2
+
+#index(x) Returns the first index of x in the tuple 
+print((1, 2, 3).index(2)) # 1
+
+#5. Built-in Functions for Tuples
+#len(tuple) Returns the length (number of elements) ofthe tuple
+print(len((1, 2, 3))) #3
+
+#max(tuple) Returns the maximum element in the tuple (forcomparable types)
+print(max((1, 2, 3))) #3
+
+#(tuple) Returns the minimum element in the tuple
+print(min((1, 2, 3))) #1
+
+#sum(tuple) Returns the sum of elements (if all arenumbers)
+print(sum((1, 2, 3))) #6
+
+#tuple(iterable)Converts an iterable (like a list or string) to atuple
+print(tuple([1, 2, 3])) # (1, 2, 3)
+
+#6. Immutability and Tuple Behavior
+#Since tuples are immutable:
+#● You cannot modify elements (tuple[0] = 10 will raise an error).● However, if a tuple contains mutable objects (e.g., lists), the mutable objects can stillbe changed.
+#Example:
+nested_tuple = (1, [2, 3])
+nested_tuple[1][0] = 100
+print(nested_tuple) # Output: (1, [100, 3])
+
+#7. Advantages of Tuples
+#1. Immutability: Ensures data cannot be accidentally modified.
+#2. Faster: Tuples are more memory-efficient and faster than lists.
+#3. Hashable: Tuples can be used as keys in dictionaries (unlike lists).
+#4. Data Integrity: Ideal for storing constant data.
+
+#8. Use Cases of Tuples
+#● Returning multiple values from functions.
+#● Representing fixed collections of items (coordinates, dates, etc.).
+#● Using tuples as dictionary keys or set elements.
+
