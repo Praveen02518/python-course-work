@@ -66,4 +66,6 @@ if followers > 0:
     else:
         print("I know kiddooo that You’re here for fun")
 else:
-    print("No followers? Are You Stalking your EX brooo ??")    
+    print("No followers? Are You Stalking your EX brooo ??")
+    
+           
