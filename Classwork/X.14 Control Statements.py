@@ -31,7 +31,10 @@ while max_attempts>0:
         print("login succesfull")
         break
     else:
-        print("invalid login")    
+        print("invalid login")  
+    max_attempts-=1
+else:
+    print("try after some time.")  
         
     
         
