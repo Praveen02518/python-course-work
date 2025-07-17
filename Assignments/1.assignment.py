@@ -1,45 +1,41 @@
-#Product Information System Using Different Data Types and Formatting Methods
+from string import Template
 
-#Welcome to the e-commerce website
-print(""*50, "\n Welcome to the e-commerce website \n" + ""*50)
-# Product Details Input
-product_name = input("Enter product name: ")
-product_price = float(input("Enter product price: "))
-product_quantity = int(input("Enter product quantity: "))
-in_stock = input("Is the product in stock? (yes/no): ").strip().lower() == "yes"
-categories = input("Enter product categories (comma-separated): ").split(',')
-
-# Data Types Example
-product = {
-    "name": product_name,
-    "price": product_price,
-    "quantity": product_quantity,
-    "in_stock": in_stock,
-    "categories": [c.strip() for c in categories]
+# Task 1: Input
+product_id = int(input("Enter Product ID: "))
+product_name = input("Enter Product Name: ")
+price = float(input("Enter Product Price: "))
+categories = input("Enter Categories (comma separated): ").split(",")
+stock_available = int(input("Enter Stock Available: "))
+stock_sold = int(input("Enter Stock Sold: "))
+discount = float(input("Enter Discount Percentage: "))
+features = set(input("Enter Product Features (comma separated): ").split(","))
+supplier_name = input("Enter Supplier Name: ")
+supplier_contact = input("Enter Supplier Contact: ")
+supplier_location = input("Enter Supplier Location: ")
+supplier_details = {
+    "Name": supplier_name,
+    "Contact": supplier_contact,
+    "Location": supplier_location
 }
+stock_details = (stock_available, stock_sold)
 
-# Output 1: Comma-Separated Format
-print("\n--- Comma-Separated Output ---")
-print("Product Name,", "Price,", "Quantity,", "In Stock,", "Categories")
-print(product["name"], ",", product["price"], ",", product["quantity"], ",", product["in_stock"], ",", product["categories"])
+print("\n--- Output Using Different Formatting Methods ---\n")
 
-# Output 2: Percentage Formatting
-print("\n--- Percentage Formatting Output ---")
-print("Product Price: %.2f" % product["price"])
-print("Total Price (Qty x Price): %.2f" % (product["quantity"] * product["price"]))
+# 1. Comma separated
+print("Comma separated:", product_id, product_name, price, categories, stock_details, discount, features, supplier_details, sep=", ")
 
-# Output 3: f-string Formatting
-print("\n--- f-string Output ---")
-print(f"Product '{product['name']}' belongs to categories: {', '.join(product['categories'])}")
-print(f"In Stock: {product['in_stock']} | Quantity: {product['quantity']} | Total Value: ₹{product['quantity'] * product['price']:.2f}")
+# 2. Percentage formatting
+print("\nPercentage formatting: Product %s costs Rs. %.2f with %.1f%% discount." % (product_name, price, discount))
 
-# Output 4: .format() method
-print("\n--- .format() Method Output ---")
-output = "Product: {}\nPrice per Unit: ₹{:.2f}\nQuantity: {}\nStock Available: {}\nCategories: {}"
-print(output.format(
-    product["name"],
-    product["price"],
-    product["quantity"],
-    product["in_stock"],
-    ', '.join(product["categories"])
-))
+# 3. f-string
+print(f"\nf-string: Product ID: {product_id}, Name: {product_name}, Categories: {categories}")
+
+# 4. .format() method
+print("\n.format(): Stock: Available = {}, Sold = {}".format(stock_details[0], stock_details[1]))
+
+# 5. Concatenation
+print("\nConcatenation: " + "Supplier - " + supplier_details["Name"] + ", Contact - " + supplier_details["Contact"])
+
+# 6. Template string
+template = Template("\nTemplate: '$name' is available for Rs.$price in $location.")
+print(template.substitute(name=product_name, price=price, location=supplier_details["Location"]))
