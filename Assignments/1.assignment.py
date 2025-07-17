@@ -1,41 +1,49 @@
 from string import Template
 
-# Task 1: Input
-product_id = int(input("Enter Product ID: "))
-product_name = input("Enter Product Name: ")
-price = float(input("Enter Product Price: "))
-categories = input("Enter Categories (comma separated): ").split(",")
-stock_available = int(input("Enter Stock Available: "))
-stock_sold = int(input("Enter Stock Sold: "))
-discount = float(input("Enter Discount Percentage: "))
-features = set(input("Enter Product Features (comma separated): ").split(","))
-supplier_name = input("Enter Supplier Name: ")
-supplier_contact = input("Enter Supplier Contact: ")
-supplier_location = input("Enter Supplier Location: ")
-supplier_details = {
-    "Name": supplier_name,
-    "Contact": supplier_contact,
-    "Location": supplier_location
-}
-stock_details = (stock_available, stock_sold)
+# Government Header
+print("\n========================================")
+print("  Government of India - Citizen Service Portal")
+print("========================================\n")
 
-print("\n--- Output Using Different Formatting Methods ---\n")
+# Input Citizen Details
+citizen_id = int(input("Enter Citizen ID: "))
+name = input("Enter Full Name: ")
+age = int(input("Enter Age: "))
+aadhar = input("Enter Aadhaar Number: ")
+schemes = input("Enter Applied Schemes (comma separated): ").split(",")
+income = float(input("Enter Annual Income (in ₹): "))
+eligibility_score = float(input("Enter Eligibility Score (0-100): "))
+documents = set(input("Enter Documents Submitted (comma separated): ").split(","))
+address = input("Enter Residential Address: ")
+district = input("Enter District: ")
+contact = input("Enter Mobile Number: ")
+
+# Package address info
+contact_info = {
+    "Address": address,
+    "District": district,
+    "Contact": contact
+}
+status = (income, eligibility_score)
+
+# Output using formatting
+print("\n--- Citizen Registration Summary ---\n")
 
 # 1. Comma separated
-print("Comma separated:", product_id, product_name, price, categories, stock_details, discount, features, supplier_details, sep=", ")
+print("Comma separated:", citizen_id, name, age, aadhar, schemes, status, documents, contact_info, sep=", ")
 
 # 2. Percentage formatting
-print("\nPercentage formatting: Product %s costs Rs. %.2f with %.1f%% discount." % (product_name, price, discount))
+print("\nPercentage formatting: Citizen %s (Age %d) has %.1f%% eligibility score for schemes." % (name, age, eligibility_score))
 
 # 3. f-string
-print(f"\nf-string: Product ID: {product_id}, Name: {product_name}, Categories: {categories}")
+print(f"\nf-string: Aadhaar: {aadhar}, District: {district}, Schemes Applied: {schemes}")
 
-# 4. .format() method
-print("\n.format(): Stock: Available = {}, Sold = {}".format(stock_details[0], stock_details[1]))
+# 4. .format()
+print("\n.format(): Annual Income: ₹{:.2f}, Eligibility Score: {}%".format(status[0], status[1]))
 
 # 5. Concatenation
-print("\nConcatenation: " + "Supplier - " + supplier_details["Name"] + ", Contact - " + supplier_details["Contact"])
+print("\nConcatenation: Contact - " + contact + " | Name - " + name)
 
-# 6. Template string
-template = Template("\nTemplate: '$name' is available for Rs.$price in $location.")
-print(template.substitute(name=product_name, price=price, location=supplier_details["Location"]))
+# 6. Template String
+template = Template("\nTemplate: '$name' (ID: $id) has registered from $district with ₹$income income.")
+print(template.substitute(name=name, id=citizen_id, district=district, income=income))
