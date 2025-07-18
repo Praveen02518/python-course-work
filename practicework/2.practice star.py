@@ -4,6 +4,51 @@ for i in range(n):
     for j in range(n):
         print('1', end=' ')
     print()
+
+# Print each letter of 'VIKASH' in star pattern
+letters = "VIKASH"
+size = 7  # Fixed size for clear letter shapes
+for letter in letters:
+    input(f"\nPress Enter to print the letter '{letter}'...")
+    print(f"\nLetter: {letter}\n")
+    if letter == 'V':
+        n = 10  # Height of the "V"
+        for i in range(n):
+            for j in range(2 * n):
+                if j == i or j == 2 * n - i - 1:
+                    print("*", end="")
+                else:
+                    print(" ", end="")
+            print()
+    else:
+        for row in range(size):
+            for col in range(size):
+                if letter == 'I':
+                    if row == 0 or row == size-1 or col == size//2:
+                        print('*', end=' ')
+                    else:
+                        print(' ', end=' ')
+                elif letter == 'K':
+                    if col == 0 or (row+col == size//2) or (row-col == size//2):
+                        print('*', end=' ')
+                    else:
+                        print(' ', end=' ')
+                elif letter == 'A':
+                    if (col == 0 or col == size-1) and row != 0 or row == 0 or row == size//2:
+                        print('*', end=' ')
+                    else:
+                        print(' ', end=' ')
+                elif letter == 'S':
+                    if row == 0 or row == size//2 or row == size-1 or (col == 0 and row < size//2) or (col == size-1 and row > size//2):
+                        print('*', end=' ')
+                    else:
+                        print(' ', end=' ')
+                elif letter == 'H':
+                    if col == 0 or col == size-1 or row == size//2:
+                        print('*', end=' ')
+                    else:
+                        print(' ', end=' ')
+            print()
     
 # right angled triangle
 for i in range(n):
@@ -94,4 +139,5 @@ for row in range(n):
     print()
 
 #
+
           
