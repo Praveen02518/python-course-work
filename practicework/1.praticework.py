@@ -1,4 +1,4 @@
-#examples p and n
+'''#examples p and n
 num=int(input("Enter the number: "))
 if num>0:
     print("positive number")
@@ -41,11 +41,28 @@ names = ["meena", "arun", "arun", "ravi", "jhon", "jhon"]
 unique_names = list(dict.fromkeys(names))
 print("Unique names in order:", unique_names)
 
-#
+#'''
+'''from functools import reduce
+
+n = int(input())
+iseven= lambda n: True if n%2==0 else False
+print(iseven(n))
+
+from functools import reduce
+
+a=int(input())
+b=int(input())
+iseven = lambda a,b: a if a>b else b
+print(iseven(a,b))
+
+a=int(input())
+b=int(input())
+iseven = lambda a,b: a*b
+print(iseven(a,b))  
 
 
-    
+l = [1,2,3,4,5,6,7,8,9,10]
+print(list(map(lambda x: x*x, l)))'''
 
-       
- 
- 
+l=['vikash', 'praveen', 'raju', 'babu']
+print(list(map(lambda i:i.upper(),l)))
