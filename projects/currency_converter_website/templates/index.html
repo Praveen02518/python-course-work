@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Currency Converter 💱</h1>
+
+        <form method="POST">
+            <label>From Currency:</label>
+            <select name="from_currency" required>
+                {% for code, name in currencies.items() %}
+                    <option value="{{ code }}">{{ code }} - {{ name }}</option>
+                {% endfor %}
+            </select>
+
+            <label>To Currency:</label>
+            <select name="to_currency" required>
+                {% for code, name in currencies.items() %}
+                    <option value="{{ code }}">{{ code }} - {{ name }}</option>
+                {% endfor %}
+            </select>
+
+            <label>Amount:</label>
+            <input type="text" name="amount" placeholder="Enter amount" required>
+
+            <button type="submit">Convert</button>
+        </form>
+
+        {% if result %}
+            <div class="result">{{ result }}</div>
+        {% elif error %}
+            <div class="error">{{ error }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
